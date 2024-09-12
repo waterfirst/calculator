@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 계산기</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 300px; margin: 0 auto; padding: 20px; }
+        input, select, button { margin: 5px 0; width: 100%; padding: 5px; }
+        button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>간단한 계산기</h1>
+    <form method="post">
+        <input type="number" name="num1" step="any" required placeholder="첫 번째 숫자">
+        <input type="number" name="num2" step="any" required placeholder="두 번째 숫자">
+        <select name="operation">
+            <option value="add">더하기</option>
+            <option value="subtract">빼기</option>
+            <option value="multiply">곱하기</option>
+            <option value="divide">나누기</option>
+        </select>
+        <button type="submit">계산하기</button>
+    </form>
+    {% if result is not none %}
+        <h2>결과: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
